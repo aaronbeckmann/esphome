@@ -320,6 +320,11 @@ void ArduinoI2CBus::recover_() {
 
   recovery_result_ = RECOVERY_COMPLETED;
 }
+
+TwoWire* ArduinoI2CBus::getWire(){
+  return this->wire_;
+}
+
 }  // namespace i2c
 }  // namespace esphome
 

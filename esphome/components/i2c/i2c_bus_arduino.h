@@ -28,7 +28,7 @@ class ArduinoI2CBus : public I2CBus, public Component {
   void set_scl_pin(uint8_t scl_pin) { scl_pin_ = scl_pin; }
   void set_frequency(uint32_t frequency) { frequency_ = frequency; }
   void set_timeout(uint32_t timeout) { timeout_ = timeout; }
-  TwoWire *wire_;
+  TwoWire* getWire();
 
  private:
   void recover_();
@@ -36,6 +36,7 @@ class ArduinoI2CBus : public I2CBus, public Component {
   RecoveryCode recovery_result_;
 
  protected:
+  TwoWire *wire_;
   uint8_t sda_pin_;
   uint8_t scl_pin_;
   uint32_t frequency_;
