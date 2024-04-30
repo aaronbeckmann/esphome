@@ -321,6 +321,8 @@ void ArduinoI2CBus::recover_() {
   recovery_result_ = RECOVERY_COMPLETED;
 }
 
+//Get Raw Access to the TwoWire Object to use PMBus, SMBus and I2C on the same
+//Pins
 TwoWire* ArduinoI2CBus::getWire(){
   return this->wire_;
 }
